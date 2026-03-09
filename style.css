@@ -793,7 +793,7 @@ img, video, iframe {
 .timeline-media img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .timeline-media iframe {
@@ -829,6 +829,39 @@ img, video, iframe {
     font-weight: 500;
     font-size: 0.75rem;
     letter-spacing: 0.02em;
+}
+
+/* Video + image side by side row */
+.timeline-media-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.timeline-media-row .timeline-media:first-child {
+    flex: 2;
+}
+
+.timeline-media-row .timeline-media:last-child {
+    flex: 1;
+    aspect-ratio: auto;
+    background: var(--bg-primary);
+}
+
+.timeline-media-row .timeline-media img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Portrait videos side by side */
+.timeline-media-portrait {
+    flex-direction: row;
+}
+
+.timeline-media-portrait .timeline-media {
+    flex: 1;
+    aspect-ratio: 9 / 16;
 }
 
 /* ===========================
